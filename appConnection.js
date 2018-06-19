@@ -2,6 +2,8 @@ const video = document.getElementsByTagName('video')[0];
 
 chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
 	if (message === 'OPEN_IN_PIPIT') {
+		video.pause();
+
 		let currentTime = video.currentTime;
 		let url = 'pipit://weblink?url=' + encodeURIComponent(window.location.href)
 			+ (currentTime >= 5 ? '&time=' + String(currentTime) : '');
