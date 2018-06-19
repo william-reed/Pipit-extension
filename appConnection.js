@@ -1,6 +1,11 @@
 const video = document.getElementsByTagName('video')[0];
 
 chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+	if (video === undefined) {
+		alert('No video player found on this page.');
+		return;
+	}
+
 	if (message === 'OPEN_IN_PIPIT') {
 		video.pause();
 
