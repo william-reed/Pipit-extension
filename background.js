@@ -2,6 +2,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 
     if (!window.navigator.platform.toLowerCase().includes('mac')) {
         alert('This extension only supports PiP on macOS.');
+        return;
     }
 
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
