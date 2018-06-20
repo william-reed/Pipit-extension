@@ -14,7 +14,7 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
 		if (video !== undefined) {
 			pauseVideo();
 			if (video.currentTime >= 5) {
-				time = '&time=' + String(currentTime);
+				time = '&time=' + String(video.currentTime);
 			}
 		}
 		
