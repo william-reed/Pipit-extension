@@ -4,9 +4,9 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
 
 		// Twitch needs two pause events. The first mutes the video, and the second actually pauses
 		async function pauseVideo() {
-			video.pause()
+			video.pause();
 			await sleep(1);
-			video.pause()
+			video.pause();
 		}
 
 		let time = '';
